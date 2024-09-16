@@ -7,15 +7,13 @@ if [ -z "$WIREMOCK_API_TOKEN" ]; then
   exit 1
 fi
 
-if [ -z "$1" ]; then
-  echo "Usage $0 <mock API ID> e.g. $0 ek2z9"
+if [ -z "$MOCK_API_ID" ]; then
+  echo "Environment variable MOCK_API_ID must be set with the target API's ID string e.g. ek2z9"
   exit 1
 fi
 
-mockApiId=$1
-
 mvn generate-sources
-curl "https://api.wiremock.cloud/v1/mock-apis/$mockApiId/__admin/ext/grpc/descriptor" \
+curl "https://api.wiremock.cloud/v1/mock-apis/$MOCK_API_ID/__admin/ext/grpc/descriptor" \
   -X PUT \
   --data-binary @target/generated-resources/protobuf/descriptor-sets/services.dsc \
   -H 'content-type:application/octet-stream' \
