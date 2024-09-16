@@ -13,4 +13,5 @@ jobs:
       - name: Run
         env:
           WIREMOCK_API_TOKEN: ${{ secrets.WIREMOCK_API_TOKEN }}
+          MOCK_API_ID: ${{ env.MOCK_API_ID }}
         run: (cd maven && bash -x ./push-to-wmc.sh)
