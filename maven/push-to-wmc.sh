@@ -15,7 +15,7 @@ fi
 mockApiId=$1
 
 mvn generate-sources
-curl -v "https://api.wiremock.cloud/v1/mock-apis/$mockApiId/__admin/ext/grpc/descriptor" \
+curl "https://api.wiremock.cloud/v1/mock-apis/$mockApiId/__admin/ext/grpc/descriptor" \
   -X PUT \
   --data-binary @target/generated-resources/protobuf/descriptor-sets/services.dsc \
   -H 'content-type:application/octet-stream' \
