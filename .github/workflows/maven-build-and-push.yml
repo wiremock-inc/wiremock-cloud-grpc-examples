@@ -11,4 +11,6 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       - name: Run
+        env:
+          WIREMOCK_API_TOKEN: ${{ secrets.WIREMOCK_API_TOKEN }}
         run: (cd maven && bash -x ./push-to-wmc.sh)
