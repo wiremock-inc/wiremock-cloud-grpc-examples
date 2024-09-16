@@ -1,0 +1,14 @@
+name: Build from Maven and push to WireMock Cloud
+
+on:
+  push:
+    branches:
+      - 'main'
+
+jobs:
+  build_and_push:
+    runs-on: ubuntu-20.04
+    steps:
+      - uses: actions/checkout@v4
+      - name: Run
+        run: (cd maven && bash -x ./push-to-wmc.sh)
