@@ -1,0 +1,19 @@
+# Compiled class file
+*.class
+
+# Log file
+*.log
+
+.DS_Store?
+ehthumbs.db
+Icon?
+Thumbs.db
+
+tmp*
+
+.gradle
+.idea
+
+out
+build
+target
