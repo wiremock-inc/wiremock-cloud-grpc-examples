@@ -36,5 +36,5 @@ service GreetingService {
 }
 
 service AnotherGreetingService {
-    rpc anotherGreeting(com.example.grpc.request.HelloRequest) returns (com.example.grpc.response.HelloResponse);
+    rpc alternativeGreeting(com.example.grpc.request.HelloRequest) returns (com.example.grpc.response.HelloResponse);
 }
